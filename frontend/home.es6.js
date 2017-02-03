@@ -10,6 +10,6 @@
 
 import welcome from './welcome.es6.js';
 
-welcome('back');
+welcome('home');
 
 module.exports = {welcome};

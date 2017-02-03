@@ -4,11 +4,21 @@ const NODE_ENV = process.env.NODE_ENV;
 console.info('Compile mode: '+NODE_ENV);
 
 module.exports={
-    entry: "./home.es6",
+    //entry: {
+    //    home: "./frontend/home.es6",
+    //    about: "./frontend/about.es6"
+    //},
+    context: __dirname+'/frontend/',
+    entry: {
+        home: "./home.es6",
+        about: "./about.es6"
+    },
+
     output: {
+        path: __dirname+'/public',
         //path: __dirname + "/dist",
-        filename: "build.compiled.js",
-        library: "home"
+        filename: "[name].compiled.js",
+        library: "[name]"
     },
 
     //watch: NODE_ENV=='development',
