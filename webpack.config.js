@@ -32,7 +32,10 @@ module.exports={
 
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.EnvironmentPlugin({ 'NODE_ENV':'development' })
+        new webpack.EnvironmentPlugin({ 'NODE_ENV':'development' }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "common" // Собирает все общие модули для всех страниц в файл output:[name] -> common.compiled.js
+        })
     ],
 
     resolve:{
