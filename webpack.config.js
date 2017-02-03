@@ -11,7 +11,8 @@ module.exports={
     context: __dirname+'/frontend/',
     entry: {
         home: "./home.es6",
-        about: "./about.es6"
+        about: "./about.es6",
+        welcome: "./welcome.es6"
     },
 
     output: {
