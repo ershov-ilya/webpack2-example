@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV;
 
+console.info('Compile mode: '+NODE_ENV);
+
 module.exports={
     entry: "./home.es6",
     output: {
@@ -35,3 +37,14 @@ module.exports={
 
     }
 };
+
+// Минификация в продакшн
+if(NODE_ENV == 'production'){
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+             compress: {
+               warnings: true
+             }
+        })
+    )
+}

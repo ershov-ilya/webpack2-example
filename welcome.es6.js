@@ -11,6 +11,4 @@
 
 export default function(message){
     console.log(`Welcome the ${message}`);
-
-    console.log('Compile mode: '+ process.env.NODE_ENV);
 };
