@@ -8,7 +8,7 @@
  * Time: 11:05
  */
 
-import welcome from './welcome.es6.js';
+import welcome from './welcome';
 
 welcome('home');
 

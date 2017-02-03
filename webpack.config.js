@@ -31,11 +31,12 @@ module.exports={
     devtool: NODE_ENV=='development'?"source-map":false,
 
     plugins: [
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.EnvironmentPlugin({ 'NODE_ENV':'development' })
     ],
 
     resolve:{
-        extensions: [".js"],
+        extensions: [".js",".es6.js"],
         modules: ["node_modules"]
     },
 
