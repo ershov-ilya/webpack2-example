@@ -8,18 +8,8 @@
  * Time: 11:05
  */
 
-document.getElementById('loginButton').onclick=function(){
-    require.ensure([], function(require){
-         let login = require('./login');
+let moduleName = location.pathname.slice(1); //   /about
 
-         login();
-    }, 'auth');
-}
+let route = require('./routes/' + moduleName + '.js'); // Если в require есть переменная, будут собраны все файлы в папке
+route();
 
-document.getElementById('logoutButton').onclick=function(){
-    require.ensure([], function(require){
-         let logout = require('./logout');
-
-         logout();
-    }, 'auth');
-}
