@@ -9,6 +9,6 @@
  * Time: 11:06
  */
 
-export default function(message){
+module.exports = function(){
     alert('Login module executed')
 }

@@ -9,7 +9,9 @@
  */
 
 document.getElementById('loginButton').onclick=function(){
-    let login = require('./login');
+    require.ensure(['./login'], function(require){
+         let login = require('./login');
 
-    login();
+         login();
+    });
 }

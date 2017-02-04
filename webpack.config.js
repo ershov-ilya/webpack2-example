@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const NODE_ENV = process.env.NODE_ENV;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 console.info('process.env.NODE_ENV='+NODE_ENV);
 
@@ -10,16 +10,17 @@ module.exports={
     //},
     context: __dirname+'/frontend/',
     entry: {
-        home: "./app"
+        app: "./app"
     },
 
     output: {
-        path: __dirname+'/public',
+        path: __dirname+'/public/js',
+        publicPath: '/webpack2-example/public/js/',
         filename: "[name].compiled.js",
         library: "[name]"
     },
 
-    //watch: NODE_ENV=='development',
+    watch: NODE_ENV=='development',
 
     watchOptions: {
         aggregateTimeout: 100
