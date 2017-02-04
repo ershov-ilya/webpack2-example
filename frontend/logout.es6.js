@@ -10,5 +10,5 @@
  */
 
 module.exports = function(){
-    alert('LOG IN')
+    alert('LOG OUT')
 }

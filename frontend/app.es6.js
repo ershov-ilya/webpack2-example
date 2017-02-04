@@ -13,5 +13,13 @@ document.getElementById('loginButton').onclick=function(){
          let login = require('./login');
 
          login();
-    });
+    }, 'auth');
+}
+
+document.getElementById('logoutButton').onclick=function(){
+    require.ensure([], function(require){
+         let logout = require('./logout');
+
+         logout();
+    }, 'auth');
 }
