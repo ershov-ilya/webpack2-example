@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV;
 
-console.info('Compile mode: '+NODE_ENV);
+console.info('process.env.NODE_ENV='+NODE_ENV);
 
 module.exports={
     //entry: {
@@ -10,14 +10,11 @@ module.exports={
     //},
     context: __dirname+'/frontend/',
     entry: {
-        home: "./home.es6",
-        about: "./about.es6",
-        welcome: "./welcome.es6"
+        home: "./app"
     },
 
     output: {
         path: __dirname+'/public',
-        //path: __dirname + "/dist",
         filename: "[name].compiled.js",
         library: "[name]"
     },
@@ -28,14 +25,14 @@ module.exports={
         aggregateTimeout: 100
     },
 
-    devtool: NODE_ENV=='development'?"source-map":false,
+    devtool: "source-map",
 
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.EnvironmentPlugin({ 'NODE_ENV':'development' }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "common" // Собирает все общие модули для всех страниц в файл output:[name] -> common.compiled.js
-        })
+        //new webpack.optimize.CommonsChunkPlugin({
+        //    name: "common" // Собирает все общие модули для всех страниц в файл output:[name] -> common.compiled.js
+        //})
     ],
 
     resolve:{

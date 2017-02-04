@@ -10,5 +10,5 @@
  */
 
 export default function(message){
-    console.log(`Welcome to the ${message}`);
-};
+    alert('Login module executed')
+}

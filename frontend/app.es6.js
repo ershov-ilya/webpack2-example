@@ -8,8 +8,8 @@
  * Time: 11:05
  */
 
-import welcome from './welcome';
+document.getElementById('loginButton').onclick=function(){
+    let login = require('./login');
 
-welcome('home');
-
-module.exports = {welcome};
+    login();
+}
